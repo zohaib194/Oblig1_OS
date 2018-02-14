@@ -1,9 +1,8 @@
-
 #include <stdio.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <sys/types.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 
 void process(int number, int time){
@@ -35,8 +34,8 @@ int main(void){
 		}
 		exit(0);		// exit for process 2
 	} else {
-		// Parent code
-				
+		
+		// Parent code	
 		process(0, 1);
 		
 		p1 = fork();

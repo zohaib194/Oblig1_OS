@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #define SHARED 0
 
 sem_t sem[6];
@@ -40,7 +40,7 @@ void *tfunc(void *arg) {
 }
 
 int main(void){
-	int i,j;
+	int i, j;
 	struct threadargs *targs[6];
 	pthread_t threads[6];
 
@@ -64,13 +64,15 @@ int main(void){
 		}
 		if (i == 1 || i == 3) {
 			targs[i]->sec = 2;
-			if(i == 1) 
+			if(i == 1) {
 			 targs[i]->signal[3] = 1; 
+			}
 		}
 		if (i == 2 || i == 4 || i == 5){
 			targs[i]->sec = 3;
-			if (i == 4)
+			if (i == 4) {
 				targs[i]->signal[5] = 1;
+			}
 		}
 	}
 
@@ -97,7 +99,9 @@ int main(void){
 	for(int z = 5; z >= 0; z--){
 		pthread_join(threads[z], NULL);		
 	} 
-	printf("Done\n");
-
+	
+	/* Free the memory */
+	free(targs);
+	
 	return 0;
 }
