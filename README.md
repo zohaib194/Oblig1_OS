@@ -1,6 +1,6 @@
 # Oblig1_OS
 
-Zohaib Butt, Anders Bjørklund Jensen and Kent W. Holt
+Zohaib Butt(473219), Anders Bjørklund Jensen(470114) and Kent W. Holt
 
 
 Task1
